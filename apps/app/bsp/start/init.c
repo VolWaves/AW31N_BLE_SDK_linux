@@ -28,6 +28,14 @@
 #define LOG_TAG             "[init]"
 #include "log.h"
 
+AT_RAM
+void test_timer_loop(void *priv)
+{
+    log_info("%s", __func__);
+    /* usb_iomode(1); */
+    /* gpio_set_mode(PORTUSB, 0xffff, PORT_HIGHZ); */
+    /* gpio_set_mode(IO_PORT_SPILT(IO_PORT_DM), PORT_INPUT_FLOATING); */
+}
 
 void system_init(void)
 {
@@ -48,6 +56,8 @@ void system_init(void)
 
     log_info(">>>AW31N_SDK INFO: %x,%d,time:%s,%s<<<", SDK_VERSION_CFG_DEFINE, SDK_VERSION_DATE_DEFINE,
              __DATE__, __TIME__);
+
+    sys_timer_add(NULL, test_timer_loop, 2 * 1000);
 
     //TODO
 #if UPDATE_V2_EN

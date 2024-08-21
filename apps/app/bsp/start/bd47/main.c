@@ -105,6 +105,7 @@ void c_main(int cfg_addr)
     system_init();
     power_later_flowing();
 
+    log_info("in linux ubuntu make build");
     app_main();
     wdt_close();
 
