@@ -4,7 +4,7 @@
 #include "le_common.h"
 
 #ifdef CONFIG_RELEASE_ENABLE
-#define LIB_DEBUG    0
+#define LIB_DEBUG    1
 #else
 #define LIB_DEBUG    1
 #endif
